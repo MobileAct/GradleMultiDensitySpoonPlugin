@@ -23,6 +23,8 @@ Other configuration: [see Gradle Spoon Plugin](https://github.com/jaredsburrows/
 In default configuration, output `build/spoon-output/{density}/**`, and all density images are copied to `build/spoon-output/merged/**`
 
 ## License
+This plugin is under MIT License
+
 ### Plugin
 - using [Kotlin Standard Library](https://github.com/JetBrains/kotlin/tree/master/libraries/stdlib), published by [Apache License 2.0](https://github.com/JetBrains/kotlin/tree/master/license)
 - using [Gradle Spoon  Plugin](https://github.com/jaredsburrows/gradle-spoon-plugin), published by [Apache License 2.0](https://github.com/jaredsburrows/gradle-spoon-plugin/blob/master/LICENSE)
