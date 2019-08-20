@@ -1,4 +1,10 @@
+plugins {
+    id "com.jfrog.bintray" version "1.8.4"
+}
+
 apply plugin: 'kotlin'
+apply plugin: 'java-library'
+apply plugin: "maven-publish"
 apply plugin: 'java-gradle-plugin'
 
 dependencies {
@@ -21,3 +27,40 @@ compileTestKotlin {
         jvmTarget = "1.6"
     }
 }
+
+test { useJUnitPlatform() }
+
+String versionTag = project.hasProperty("versionTag") ? project.property("versionTag") : ""
+
+bintray {
+    user = project.hasProperty("BINTRAY_USER") ? project.property("BINTRAY_USER") : ""
+    key = project.hasProperty("BINTRAY_KEY") ? project.property("BINTRAY_KEY") : ""
+    publications = ["bintray"]
+    publish = true
+    pkg {
+        repo = "GradleMultiDensitySpoonPlugin"
+        name = "GradleMultiDensitySpoonPlugin"
+        userOrg = "mobile-act"
+        licenses = ["MIT"]
+        githubRepo = "MobileAct/GradleMultiDensitySpoonPlugin"
+        version {
+            name = versionTag.replaceAll("v-", "")
+            desc = "Gradle Spoon Plugin Extension for multi density"
+            vcsTag = versionTag
+
+        }
+    }
+}
+
+publishing {
+    publications {
+        bintray(MavenPublication) {
+            from components.java
+            groupId "mobile-act"
+            artifactId "gradle-multi-density-spoon-plugin"
+            version versionTag.replaceAll("v-", "")
+        }
+    }
+}
+
+bintrayUpload.dependsOn assemble
