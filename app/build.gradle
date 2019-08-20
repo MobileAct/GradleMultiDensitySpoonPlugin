@@ -1,14 +1,8 @@
-buildscript {
-    dependencies {
-        classpath fileTree(dir: 'plugins', include: ['*.jar'])
-    }
-}
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.jaredsburrows.spoon'
-//apply plugin: 'mdspoon'
+apply plugin: 'mdspoon'
 
 android {
     compileSdkVersion 28
@@ -47,8 +41,6 @@ dependencies {
     androidTestImplementation 'com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT'
 }
 
-/*
 mdspoon {
     densities = [320, 480, 640]
 }
-*/

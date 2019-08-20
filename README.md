@@ -1,12 +1,27 @@
 # GradleMultiDensitySpoonPlugin
+[![Build Status](https://dev.azure.com/MobileAct/GradleMultiDensitySpoonPlugin/_apis/build/status/MobileAct.GradleMultiDensitySpoonPlugin?branchName=master)](https://dev.azure.com/MobileAct/GradleMultiDensitySpoonPlugin/_build/latest?definitionId=8&branchName=master) [ ![Download](https://api.bintray.com/packages/mobile-act/GradleMultiDensitySpoonPlugin/GradleMultiDensitySpoonPlugin/images/download.svg) ](https://bintray.com/mobile-act/GradleMultiDensitySpoonPlugin/GradleMultiDensitySpoonPlugin/_latestVersion)  
 [Gradle Spoon Plugin](https://github.com/jaredsburrows/gradle-spoon-plugin) Extension for multi density
 
-## Usage(alpha)
-1. execute `./gradlew :plugin:jar`, find output jar(`/plugin/build/libs`)
-1. move jar to your project(for example, app module's `plugins` directory)
-1. add classpath(for example `/app/build.gradle`'s buildScript.dependencies block, `classpath fileTree(dir: 'plugins', include: ['*.jar'])`)
-1. add `apply plugin 'mdspoon'`
-1. execute gradle some mdspoon task.
+## Usage
+build.gradle
+```groovy
+buildscript {
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://dl.bintray.com/mobile-act/GradleMultiDensitySpoonPlugin' }
+    }
+    dependencies {
+        // both need
+        classpath 'com.jaredsburrows:gradle-spoon-plugin:1.5.0'
+        classpath 'mobile-act:gradle-multi-density-spoon-plugin:0.1'
+    }
+}
+```
+```groovy
+// both need
+apply plugin: 'com.jaredsburrows.spoon'
+apply plugin: 'mdspoon'
+```
 
 configuration:
 
@@ -19,7 +34,9 @@ mdspoon {
 
 Other configuration: [see Gradle Spoon Plugin](https://github.com/jaredsburrows/gradle-spoon-plugin#usage)
 
-## Output
+## Execute
+Execute task: `mdspoon{Variant}AndroidTest`
+
 In default configuration, output `build/spoon-output/{density}/**`, and all density images are copied to `build/spoon-output/merged/**`
 
 ## License
