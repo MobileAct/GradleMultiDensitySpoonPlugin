@@ -2,9 +2,7 @@
 [![Build Status](https://dev.azure.com/MobileAct/GradleMultiDensitySpoonPlugin/_apis/build/status/MobileAct.GradleMultiDensitySpoonPlugin?branchName=master)](https://dev.azure.com/MobileAct/GradleMultiDensitySpoonPlugin/_build/latest?definitionId=8&branchName=master) [ ![Download](https://api.bintray.com/packages/mobile-act/GradleMultiDensitySpoonPlugin/GradleMultiDensitySpoonPlugin/images/download.svg) ](https://bintray.com/mobile-act/GradleMultiDensitySpoonPlugin/GradleMultiDensitySpoonPlugin/_latestVersion)  
 
 <p align="center">
-  <img src="/screenshot.gif">
-  
-  <a href="https://github.com/jaredsburrows/gradle-spoon-plugin">Gradle Spoon Plugin</a> Extension for multi density
+  <img src="/screenshot.gif"><br/><a href="https://github.com/jaredsburrows/gradle-spoon-plugin">Gradle Spoon Plugin</a> Extension for multi density
 </p>
 
 ## Usage
